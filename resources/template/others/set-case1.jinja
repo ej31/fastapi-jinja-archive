@@ -1,0 +1,16 @@
+{% set ns = namespace(count=0) %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>{{ title }}</h1>
+<div> ns 변수는 이 페이지 내 어디서든 호출 할 수 있습니다.</div>
+{% for item in [1,2,3] %}
+    <p>현재 ns.count 값 : {{ ns.count }}</p>
+    {% set ns.count = ns.count + 1 %}
+{% endfor %}
+Total count: {{ ns.count }}
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>somepage jinja</title>
+</head>
+<body>
+<h1> 매크로폼을 Import 받아온 상태입니다. (현재파일: somepage.jinja) </h1>
+{% import 'macro/macro.jinja' as macros %}
+<div> 아이디 : {{ macros.input('username') }} </div>
+<div> 비밀번호 : {{ macros.input('password', type='password') }} </div>
+
+</body>
+</html>

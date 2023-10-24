@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>CASE 4</h1>
+<p>
+    {% for item in items %}
+        {% if item.state == 'stop' %}
+            {% break %}
+        {% elif item.state == 'skip' %}
+            {% continue %}
+        {% endif %}
+        <div>
+            <h2>{{ loop.cycle('첫번째', '두번째', '세번째', '네번째', '다섯번째') }}</h2>
+            <h3>{{ loop.cycle('홀수번째', '짝수번째') }}</h3>
+            <p> 순번 (loop.index0) : {{ loop.index0 }}</p>
+            <p> 순번 (loop.index) : {{ loop.index }}</p>
+            <p> 이름: {{ item.name }}</p>
+            <p> 색상: {{ item.color }}</p>
+            <p> 가격: {{ item.price }}</p>
+            <p> 상태: {{ item.state }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>

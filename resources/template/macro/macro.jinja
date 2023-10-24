@@ -1,0 +1,9 @@
+{% macro input(name, value='', type='text') %}
+    <input type="{{ type }}" name="{{ name }}" value="{{ value }}">
+{% endmacro %}
+
+{#<form>#}
+{#    <h1> 매크로폼을 바로 쓰고 있는 상태입니다. (현재 파일: macro.jinja) </h1>#}
+{#    <div> 아이디 : {{ input('username') }} </div>#}
+{#    <div> 비밀번호 : {{ input('password', type='password') }} </div>#}
+{#</form>#}

@@ -6,23 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-<h1>CASE 1</h1>
-<div>
-    {% if True %}
-        yay
-    {% endif %}
-</div>
+<h1>CASE 3</h1>
 <p>
     {% for item in items %}
         <div>
+            <p> 순번 (loop.index0) : {{ loop.index0 }}</p>
+            <p> 순번 (loop.index) : {{ loop.index }}</p>
             <p> 이름: {{ item.name }}</p>
             <p> 색상: {{ item.color }}</p>
             <p> 가격: {{ item.price }}</p>
-            <br>
         </div>
-    {% else %}
-        아이템이 없습니다.
     {% endfor %}
-</p>
 </body>
 </html>

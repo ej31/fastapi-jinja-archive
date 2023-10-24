@@ -1,34 +1,15 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
 
-from app.ctrl.base import base_router
-from app.models.user import User
+from app.ctrl import case_default, case_if, case_for, case_extends, case_macro, case_include, case_others
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="resources/static"), name="static_func")
-app.include_router(base_router)
-
-templates = Jinja2Templates(directory="resources/template")
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
-@app.get("/hello/{path}")
-async def rootV2(path):
-    return {"message": "Hello World", "path": path}
-
-
-@app.get("/item/{item_id}", response_class=HTMLResponse)
-async def read_item(request: Request, item_id: str):
-    return templates.TemplateResponse(
-        name="item.jinja",
-        context={
-            "request": request,
-            "item_id": item_id}
-    )
+app.include_router(case_default.router)
+app.include_router(case_if.router)
+app.include_router(case_for.router)
+app.include_router(case_extends.router)
+app.include_router(case_include.router)
+app.include_router(case_others.router)
+app.include_router(case_macro.router)
 
