@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+<p>
+    {% if user.role == 'admin' %}
+        Hello, Admin {{ user.name | length }}!
+    {% elif user.role == 'user' %}
+        Hello, User {{ user.name }}!
+    {% else %}
+        Hello, Guest!
+    {% endif %}
+
+</p>
+
+<p>User 프리미엄여부 : {{ user.is_premium() }}</p>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+<p>
+    {% if user.role in ['admin', 'staff', 'moderator'] %}
+        {{ user.name }}님, 특별한 권한을 가지신 분이군요! <br>
+        당신의 등급은 {{ user.role }} 입니다.
+        <p> 프리미엄 가입 여부: {{ user.is_premium() }} </p>
+    {% endif %}
+</p>
+</body>
+</html>

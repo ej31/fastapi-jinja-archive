@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>CASE 1</h1>
+<p>
+    {% for item in items %}
+        <div>
+            <p> 이름: {{ item.name }}</p>
+            <p> 색상: {{ item.color }}</p>
+            <p> 가격: {{ item.price }}</p>
+            <br>
+        </div>
+    {% endfor %}
+</p>
+</body>
+</html>
