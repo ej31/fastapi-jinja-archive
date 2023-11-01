@@ -12,4 +12,3 @@ app.include_router(case_extends.router)
 app.include_router(case_include.router)
 app.include_router(case_others.router)
 app.include_router(case_macro.router)
-

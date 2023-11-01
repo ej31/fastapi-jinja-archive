@@ -3,11 +3,12 @@ from starlette.requests import Request
 from starlette.responses import HTMLResponse
 from starlette.templating import Jinja2Templates
 
-router = APIRouter(prefix="/ohters")
+router = APIRouter(prefix="/others")
 templates = Jinja2Templates(directory="resources/template")
 
 
-@router.get("/set-1", response_class=HTMLResponse)
+@router.get("/")
+@router.get("/set1", response_class=HTMLResponse)
 def sample_set(request: Request):
     return templates.TemplateResponse(
         name='others/set-case1.jinja',
@@ -18,7 +19,7 @@ def sample_set(request: Request):
 @router.get("/set-2", response_class=HTMLResponse)
 def sample_set(request: Request):
     return templates.TemplateResponse(
-        name='others/set-case1.jinja',
+        name='others/set-case2.jinja',
         context={'request': request}
     )
 
@@ -33,4 +34,3 @@ def sample_inline(request: Request):
             'price': 1_000_000_000.191919
         }
     )
-
